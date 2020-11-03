@@ -1,0 +1,36 @@
+{
+  "version": "2.0",
+  "envId": "{{env.ENV_ID}}",
+  "framework": {
+    "name": "ghost",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "serviceName": "bitwarden",
+          "servicePath": "/",
+          "uploadType": "image",
+          "containerPort": 80,
+          "imageInfo": {
+            "imageUrl": "bitwardenrs/server:1.17.0-alpine"
+          },
+          "envVariables": {
+            "WEBSOCKET_ENABLED": "false",
+            "SIGNUPS_ALLOWED": "true"
+          },
+          "volumeMounts": {
+            "/data": "BITWARDEN_CFS"
+          }
+        }
+      }
+    },
+    "requirement": {
+      "addons": [
+        {
+          "type": "CFS",
+          "name": "BITWARDEN_CFS"
+        }
+      ]
+    }
+  }
+}
