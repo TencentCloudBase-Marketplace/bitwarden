@@ -19,7 +19,7 @@
             "SIGNUPS_ALLOWED": "true"
           },
           "volumeMounts": {
-            "/data": "BITWARDEN_CFS"
+            "/data": "bitwarden-cfs"
           }
         }
       }
@@ -28,7 +28,7 @@
       "addons": [
         {
           "type": "CFS",
-          "name": "BITWARDEN_CFS"
+          "name": "bitwarden-cfs"
         }
       ]
     }
