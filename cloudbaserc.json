@@ -2,7 +2,7 @@
   "version": "2.0",
   "envId": "{{env.ENV_ID}}",
   "framework": {
-    "name": "ghost",
+    "name": "bitwarden",
     "plugins": {
       "client": {
         "use": "@cloudbase/framework-plugin-container",
