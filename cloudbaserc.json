@@ -9,13 +9,14 @@
         "inputs": {
           "serviceName": "bitwarden",
           "servicePath": "/",
-          "uploadType": "image",
+          "localPath": "./",
+          "uploadType": "package",
           "containerPort": 80,
-          "imageInfo": {
-            "imageUrl": "ccr.ccs.tencentyun.com/tcb_public/bitwardenrs_server:alpine"
-          },
           "envVariables": {
-            "WEBSOCKET_ENABLED": "false"
+            "WEBSOCKET_ENABLED": "false",
+            "ENABLE_DB_WAL": "false",
+            "DB_NAME": "bitwarden",
+            "DATABASE_URL": "mysql://{{env.DB_USER}}:{{env.DB_PASS}}@{{env.DB_HOST}}:{{env.DB_PORT}}/bitwarden"
           },
           "volumeMounts": {
             "/data": "bitwarden-cfs"
@@ -28,6 +29,16 @@
         {
           "type": "CFS",
           "name": "bitwarden-cfs"
+        },
+        {
+          "type": "CynosDB",
+          "name": "bitwarden",
+          "envMap": {
+            "IP": "DB_HOST",
+            "PORT": "DB_PORT",
+            "USERNAME": "DB_USER",
+            "PASSWORD": "DB_PASS"
+          }
         }
       ]
     }
