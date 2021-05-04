@@ -16,7 +16,7 @@ Bitwarden 是一款自由且开源的密码管理服务，用户可在加密的�
 
 - SIGNUPS_ALLOWED： 是否允许注册
 
-更多配置参考：https://github.com/dani-garcia/bitwarden_rs/wiki
+更多配置参考：https://github.com/dani-garcia/vaultwarden/wiki
 
 ### 依赖
 
