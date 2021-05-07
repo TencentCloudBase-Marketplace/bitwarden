@@ -18,7 +18,7 @@ SQLite 部署（文件存储）[![](https://main.qcloudimg.com/raw/67f5a389f1ac6
 
 - SIGNUPS_ALLOWED： 是否允许注册
 
-更多配置参考：https://github.com/dani-garcia/bitwarden_rs/wiki
+更多配置参考：https://github.com/dani-garcia/vaultwarden/wiki
 
 ### 依赖
 
